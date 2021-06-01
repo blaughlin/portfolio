@@ -293,11 +293,12 @@ header {
 
 .my-services{
     background-color: var(--clr-dark);
-    background-image: url(../Images/services2.png);
+    background-image: url(../Images/bubble.jpg);
     background-size: cover;
     color: var(--clr-light);
     background-blend-mode: multiply;
     text-align: center;
+    height: 600px;
 }
 
 .section__title--services{
@@ -412,6 +413,7 @@ header {
     transition:
         transform 750ms cubic-bezier(.5, 0, .5, 1),
         opacity 250ms linear;
+
 }
 .portfolio__card{
     display: flex;
@@ -454,6 +456,7 @@ header {
 .card_link:focus{
     opacity: .9;
     text-decoration: underline;
+
 }
 
 
@@ -467,11 +470,14 @@ header {
     margin-bottom: 0.5em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    z-index: 0;
 
 
 }
 
 .wrapper{
+    position: relative;
+    z-index: 100;
     overflow: hidden;
     margin-bottom: 0.5em;
     border-top-left-radius: 10px;
@@ -492,6 +498,7 @@ header {
     border: 1px solid #181818;
     text-align: left;
     border: #404040 solid 1px;
+    border-radius: 10px;
 
 }
 .card__details {
@@ -558,6 +565,7 @@ header {
 .footer a {
     color: inherit;
     text-decoration: none;
+    color: #fff;
 }
 
 .footer__link {
