@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bernard Laughlin's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="img/devjane.png" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Triple Thanks 
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Online gratitude network</p>
+            <img src="Images/gratitude.png" alt="" class="intro__img">
+        </section>
+        
+        <div class="portfolio-item-individual">
+            <p>My capstone project for CS50 web. This is an online gratitude journal network application. It uses Django for the backend and HTML, JavaScript, and bootstrap for the front end.  
+                Users can post daily private and public entries with the goal of posting three gratitude entries per day. Site is hosted on Heroku with a PostgreSQL database,
+                profile pictures are stored on an Amazon S3 bucket.
+
+            </p>
+            <div class="container">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/2mhDCaZIe9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>Features</p>
+            <p>Gratitude Post: Users who are signed in are able to write a new text-based post by filling in text into a text area and then clicking a button to submit the post.</p>
+            <p>Private Posts: Users are able to classify posts as private which will only be seen by them.</p>
+            <p>All Posts: The “All Posts” link in the navigation bar takes the user to a page where they can see all public posts consolidated by day from all users, with the most recent posts first.</p>
+            <p>Profile Page: Displays user's profile picture, location, and bio information. Also displays the number of followers, number of posts, and number of people the user is following. Users can edit their profile  or change their photo at any time. </p>
+            <p>Following Page: The “Following” link in the navigation bar takes the user to a page where they see all posts made by users that the current user follows. Page is only available to users who are signed in.</p>
+            <p>Pagination: Only 10 posts are shown per page. If there are more than 10 posts a next and previous button appear.</p>
+            <p>Edit Posts: Users are able to click an “Edit” button on any of their own posts to edit that post.</p>
+            <p>Like and Unlike: Users are able to click a button on any post to toggle whether or not they “like” that post.</p>
+            <p>Password Recovery: Users are able to change their password or create a new password with a link sent to their email</p>
+            <p>User Map: Mapbox API is used to create a map of all users. Username is displayed when map pin is clicked</p>
+
+
+
+        </div>
+        
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:bernardlaughlin@gmail.com" class="footer__link">bernardlaughlin@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://codepen.io">
+                        <i class="fab fa-codepen"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="http://dribbble.com">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://twitter.com">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="index.js"></script>
+        
+    </body>
+</html>
+
+
