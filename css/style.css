@@ -293,7 +293,7 @@ header {
 
 .my-services{
     background-color: var(--clr-dark);
-    background-image: url(../Images/bubble.jpg);
+    background-image: url(../Images/bubble2.jpg);
     background-size: cover;
     color: var(--clr-light);
     background-blend-mode: multiply;
