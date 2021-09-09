@@ -490,7 +490,7 @@ header {
 }
 
 .card{
-    /*ackground-image: linear-gradient(#404040, #282828);*/
+    /*background-image: linear-gradient(#404040, #282828);*/
     background-color: #282828;
     background-color: #111111;
     padding: 0;
@@ -514,6 +514,7 @@ header {
 }
 
 .card__name {
+    color: white;
     font-size: 24px;
     font-weight: 600;
     margin-top: 16px;
@@ -629,3 +630,10 @@ header {
     height: 100%;
 }
 
+
+/* Birch Hill Privacy Page */
+.privacy {
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 5%;
+}
