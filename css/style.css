@@ -637,3 +637,17 @@ header {
     margin: 0 auto;
     margin-top: 5%;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border: 1px solid #EAD8B1;
+    color: black;
+}
+th, td {
+    border: 1px solid #EAD8B1;
+    padding: 10px;
+    text-align: center;
+}

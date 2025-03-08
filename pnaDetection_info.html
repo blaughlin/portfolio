@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bernard Laughlin's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />  
+        
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                   Pneumonia Detection 
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Neural Network</p>
+            <img  src="Images/chest_xray.png" alt="" class="intro__img">
+        </section>
+        
+
+
+
+
+
+
+
+         <div class="portfolio-item-individual">
+            <h3>Overview</h3>
+            <ul>
+                <li>This project applies deep learning to detect pneumonia from chest X-ray images using fine-tuned ResNet50, DenseNet121, and a custom CNN model trained from scratch. The goal was to compare transfer learning vs. training a CNN from scratch and identify the best model for clinical deployment.
+
+Through extensive experiments, ResNet50 emerged as the best-performing model, achieving high precision and the lowest false alarm rate, making it ideal for real-world medical applications.</li>
+            </ul>
+
+                    <!-- <div class="container">
+                <iframe class="responsive-iframe" src="https://www.youtube.com/embed/J1Zg1h8MVGU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div> -->
+        <h3>Dataset</h3>
+        <h4>Sources</h4>
+        <ul>
+            <li>NIH Chest X-ray Dataset (2017)</li>
+            <li>Stanford PNA Dataset (2019)</li>
+        </ul>
+        <h4>Training Size</h4>
+        <ul>
+            <li>38,029 normal images</li>
+            <li>6,750 pneumonia images</li>
+        </ul>
+        <h4>Classes</h4>
+        <ul>
+            <li>Normal (0)</li>
+            <li>Pneumonia (1)</li>
+        </ul>
+
+        <h4>Preprocessing</h4>
+        <ul>
+            <li>Resizing to 224x224 pixels</li>
+            <li>Pixel values scaled to [0,1]</li>
+            <li>Data Augmentation: rotation, shift, zoom, horizontal flip</li>
+        </ul>
+        
+        <h3>Model Selection & Training</h3>
+        <h4>ResNet50</h4>
+        <ul>
+        <li>A deep model with skip connections for better accuracy.</li>
+        </ul>   
+        <h4>DenseNet121</h4>
+        <ul>
+        <li>Feature reuse for better performance.</li>
+        </ul>   
+        <h4>Custom CNN</h4>
+        <ul>
+        <li>Built from scratch as a baseline.</li>
+        </ul>
+
+        
+        <h3>Fine-Tuning Strategy</h3>
+        <ul>
+            <li> Unfroze last 20 and 50 layers ResNet50 and DenseNet121 for fine-tuning.</li>
+            <li>Adjusted learning rate (1e-5) to retain pre-trained ImageNet knowledge.</li>
+            <li>Used Early Stopping & LR Reduction to prevent over-fitting.</li>
+        </ul>
+        <h3>Model Performance Comparison</h3>
+        <table>
+            <tr>
+                <th>Metric</th>
+                <th>Fine-Tuned ResNet50</th>
+                <th>Fine-Tuned DenseNet121</th>
+                <th>Baseline CNN</th>
+            </tr>
+            <tr>
+                <td>Precision (PPV)</td>
+                <td>99.05%</td>
+                <td>79.26%</td>
+                <td>79.11%</td>
+            </tr>
+            <tr>
+                <td>Sensitivity</td>
+                <td>87.68%</td>
+                <td>92.25%</td>
+                <td>90.85%</td>
+            </tr>
+            <tr>
+                <td>Specificity</td>
+                <td>99.85%</td>
+                <td>95.74%</td>
+                <td>95.74%</td>
+            </tr>
+            <tr>
+                <td>F1 Score</td>
+                <td>92.87%</td>
+                <td>85.02%</td>
+                <td>84.57%</td>
+            </tr>
+        </table>
+        
+        <h3>Key Takeaways</h3>
+        <ul>
+            <li>ResNet50 has the highest Precision (99.05%) → Best at minimizing false alarms.</li>
+            <li>DenseNet121 has the highest Sensitivity (92.25%) → Best at detecting pneumonia cases.</li>
+            <li>Baseline CNN performed decently but did not outperform transfer learning models.</li>
+        </ul>
+        <h3>Final Model: ResNet50 Confusion Matrix</h3>
+        <img src="Images/Confusion_1_3.png" alt="Confusion Matrix">
+        
+        <h3>Conclusion</h3>
+        <ul>
+
+        <li>This project demonstrates how deep learning can assist in pneumonia detection from chest X-rays. Through fine-tuning and decision threshold adjustments, I built a clinically relevant model with high accuracy and reliability. The final ResNet50 model balances Sensitivity and Precision, making it ideal for real-world deployment in medical imaging.</li>
+        </ul>
+    </div>
+        
+        
+        <!------- Footer --------->
+        <footer class="footer">
+            <a href="mailto:bernardlaughin@gmail.com" class="footer__link">bernardlaughlin@gmail.com</a>            
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/bernard-laughlin-68686163/">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </li>      
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.instagram.com/bernardlaughlin/">
+                        <i class="fab fa-instagram"></i>
+                    </a>                         
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.researchgate.net/profile/Bernard-Laughlin">
+                        <i class="fab fa-researchgate"></i>
+                    </a>
+                </li>
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://github.com/blaughlin">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+        
+        
+        <script src="index.js"></script>
+        
+    </body>
+</html>
+
+
