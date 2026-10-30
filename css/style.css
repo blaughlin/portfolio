@@ -415,6 +415,15 @@ header {
     gap: 1em;
 }
 
+/* Once the grid is more than one column, every card matches the tallest.
+   Single column (mobile) keeps natural heights - nothing sits side by side
+   there, so equal heights would only add empty space. */
+@media (min-width: 700px) {
+    .portfolio {
+        grid-auto-rows: 1fr;
+    }
+}
+
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
@@ -500,6 +509,10 @@ header {
     opacity: .5;
 }
 
+.card__container {
+    display: flex;
+}
+
 .card{
     /*background-image: linear-gradient(#404040, #282828);*/
     background-color: #282828;
@@ -511,14 +524,26 @@ header {
     border: #404040 solid 1px;
     border-radius: 10px;
 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .card__details {
     padding: 1px 10px 8px 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
+.card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
 .card__tag {
     display: inline-block;
     padding: 4px 8px;
-    margin: 4px 2px 0 0;
     border: 1px solid #b3b3b3;
     border-radius: 50px;
     font-size: 12px;
@@ -530,7 +555,6 @@ header {
 .card__status {
     display: inline-block;
     padding: 4px 8px;
-    margin: 4px 2px 0 0;
     border: 1px solid var(--clr-accent);
     border-radius: 50px;
     font-size: 12px;
@@ -564,6 +588,7 @@ header {
 .btn_container{
     display: flex;
     margin-bottom: 10px;
+    margin-top: auto;
 }
 .card__btn {
     border: none;
