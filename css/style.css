@@ -538,30 +538,11 @@ header {
     color: var(--clr-accent);
 }
 
-/* Screenshot placeholders for projects without an image yet */
-.card__placeholder {
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--ff-secondary);
-    font-size: 28px;
-    font-weight: var(--fw-bold);
-    letter-spacing: 2px;
-    color: var(--clr-light);
-    text-transform: uppercase;
-}
-
-.card__placeholder--cache {
-    background-image: linear-gradient(135deg, #2c5364 0%, #203a43 100%);
-}
-
-.card__placeholder--tleten {
-    background-image: linear-gradient(135deg, #ff674d 0%, #a63a28 100%);
-}
-
-.card__placeholder--eleanor {
-    background-image: linear-gradient(135deg, #3f3f5a 0%, #1f1f2e 100%);
+/* Logo tiles - brand marks sit on white, contained rather than cropped */
+.card__img--logo {
+    object-fit: contain;
+    background-color: #fff;
+    padding: 28px;
 }
 
 .card__name {
